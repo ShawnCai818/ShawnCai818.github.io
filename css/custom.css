@@ -1,0 +1,139 @@
+/* ======================== */
+/* 全局按钮样式终极覆盖 */
+/* ======================== */
+button, 
+.btn, 
+[class*="button"], 
+.pagination .page-number, 
+.tag-cloud a,
+.social-button {
+  /* 新增居中设置 */
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  
+  /* 保持原有样式 */
+  background: var(--btn-bg, #6c757d) !important;
+  color: var(--btn-color, white) !important;
+  border: none !important;
+  border-radius: 4px !important;
+  padding: 8px 16px !important;
+  transition: 
+    background 0.3s ease,
+    transform 0.2s ease !important;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1) !important;
+}
+
+/* 保持悬停状态不变 */
+button:hover,
+.btn:hover, 
+[class*="button"]:hover {
+  background: var(--btn-hover-color, #5a6268) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15) !important;
+}
+
+/* ======================== */
+/* 页脚核心样式 */
+/* ======================== */
+#footer {
+  background: var(--footer-bg-color, #f5f5f5) !important;
+  background-image: none !important;
+  --text-color: #333 !important;
+  --link-color: #222 !important;
+  --icon-color: #444 !important;
+  opacity: 1 !important;
+  animation: none !important;
+  transition: none !important;
+  padding: 20px 0 !important;
+}
+
+/* ======================== */
+/* 页脚社交媒体图标 */
+/* ======================== */
+#footer .social-icons {
+  margin: 20px 0 !important;
+  display: flex;
+  justify-content: center;
+  gap: 25px !important;
+}
+
+#footer .social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 50% !important;
+  background: rgba(0,0,0,0.08) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transform: scale(1);
+}
+
+#footer .social-icons a:hover {
+  background: rgba(0,0,0,0.15) !important;
+  transform: scale(1.15) rotate(8deg) !important;
+}
+
+#footer .social-icons i {
+  color: var(--icon-color) !important;
+  font-size: 1.3em !important;
+}
+
+/* ======================== */
+/* 页脚文字系统 */
+/* ======================== */
+#footer,
+#footer * {
+  text-decoration: none !important;
+}
+
+#footer .copyright,
+#footer .framework-info {
+  opacity: 1 !important;
+  color: var(--text-color) !important;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.05);
+}
+
+#footer .framework-info {
+  margin-top: 10px !important;
+}
+
+#footer .framework-info a {
+  color: var(--link-color) !important;
+  font-weight: 500;
+  transition: color 0.2s ease !important;
+}
+
+#footer .framework-info a:hover {
+  color: var(--theme-color, #6c757d) !important;
+}
+
+#footer .footer-separator {
+  color: rgba(0,0,0,0.25) !important;
+  margin: 0 10px !important;
+}
+
+/* ======================== */
+/* 深色模式适配 */
+/* ======================== */
+[data-theme="dark"] #footer {
+  background: var(--footer-bg-dark-color, #2d2d2d) !important;
+  --text-color: #d1d1d1 !important;
+  --link-color: #e0e0e0 !important;
+  --icon-color: #bbbbbb !important;
+}
+
+[data-theme="dark"] #footer .social-icons a {
+  background: rgba(255,255,255,0.1) !important;
+}
+
+[data-theme="dark"] #footer .social-icons a:hover {
+  background: rgba(255,255,255,0.2) !important;
+}
+
+[data-theme="dark"] #footer .footer-separator {
+  color: rgba(255,255,255,0.3) !important;
+}

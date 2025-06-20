@@ -1,0 +1,11 @@
+/* 强制覆盖页脚背景色 */
+body #footer.footer {
+  background: #f5f5f5 !important;
+  border-top: 1px solid #e8e8e8 !important;
+}
+
+/* 深色模式适配 */
+[data-theme="dark"] body #footer.footer {
+  background: #2d2d2d !important;
+  border-color: #444 !important;
+}
