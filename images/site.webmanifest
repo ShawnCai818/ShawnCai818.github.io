@@ -1,21 +1,18 @@
 {
-  "name": "Shawn's外贸运营博客",      // ← 修改为你的博客名称
-  "short_name": "Shawn's Blog",     // ← 简短名称（用于手机主屏幕）
-  "description": "专注袜子、布艺收纳、化妆品包材的外贸运营与采购指南",  // ← 描述
+  "name": "Shawn's Blog",
+  "short_name": "Shawn",
   "icons": [
     {
-      "src": "/images/web-app-manifest-192x192.png",  // 确保路径正确
+      "src": "/images/web-app-manifest-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/images/web-app-manifest-512x512.png",  // 确保路径正确
+      "src": "/images/web-app-manifest-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
   ],
-  "theme_color": "#3b70fc",         // ← 主题色（同导航栏）
-  "background_color": "#ffffff",    // ← 启动屏背景色
-  "display": "standalone",          // 全屏模式
-  "start_url": "/?utm_source=pwa"   // ← 启动页URL（可选参数）
+  "theme_color": "#6c757d",
+  "background_color": "#ffffff"
 }

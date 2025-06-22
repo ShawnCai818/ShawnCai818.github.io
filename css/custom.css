@@ -1,40 +1,66 @@
 /* ======================== */
-/* 全局按钮样式终极覆盖 */
+/* 全局按钮样式终极覆盖（保持不变） */
 /* ======================== */
-button, 
+/* ====== 灰色系按钮 ====== */
 .btn, 
 [class*="button"], 
 .pagination .page-number, 
-.tag-cloud a,
-.social-button {
-  /* 新增居中设置 */
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  
-  /* 保持原有样式 */
+.tag-cloud a {
   background: var(--btn-bg, #6c757d) !important;
-  color: var(--btn-color, white) !important;
+  color: white !important;
   border: none !important;
-  border-radius: 4px !important;
-  padding: 8px 16px !important;
-  transition: 
-    background 0.3s ease,
-    transform 0.2s ease !important;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1) !important;
+  transition: all 0.3s ease !important;
 }
 
-/* 保持悬停状态不变 */
-button:hover,
-.btn:hover, 
+/* 悬停效果 */
+.btn:hover,
 [class*="button"]:hover {
-  background: var(--btn-hover-color, #5a6268) !important;
+  background: var(--btn-hover-color, #495057) !important;
   transform: translateY(-2px) !important;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15) !important;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important;
+}
+
+/* ====== 灰色系卡片 ====== */
+.card {
+  background: #f8f9fa !important;
+  border: 1px solid #dee2e6 !important;
+}
+
+/* ====== 导航栏 ====== */
+.navbar {
+  background: #343a40 !important; /* 深灰导航 */
 }
 
 /* ======================== */
-/* 页脚核心样式 */
+/* 修改重点：页脚高度调整 */
+/* ======================== */
+#footer-wrap {
+  padding: 10px 0 !important;  /* 大幅减少上下内边距 */
+  margin: 0 !important;        /* 移除所有外边距 */
+  min-height: unset !important; /* 移除最小高度限制 */
+}
+
+/* 社交图标区域压缩 */
+#footer-wrap .social-icons {
+  margin: 8px 0 !important;    /* 减少上下边距 */
+  padding: 0 !important;       /* 移除内边距 */
+}
+
+/* 版权信息行压缩 */
+#footer-wrap .copyright,
+#footer-wrap .framework-info {
+  margin: 2px 0 !important;    /* 极简边距 */
+  line-height: 1.2 !important; /* 紧凑行高 */
+  font-size: 0.8rem !important; /* 可选：调小字号 */
+}
+
+/* 确保没有隐藏元素占用空间 */
+#footer-wrap:after {
+  content: none !important;
+}
+
+/* ======================== */
+/* 以下所有原有样式保持不变 */
 /* ======================== */
 #footer {
   background: var(--footer-bg-color, #f5f5f5) !important;
@@ -42,17 +68,11 @@ button:hover,
   --text-color: #333 !important;
   --link-color: #222 !important;
   --icon-color: #444 !important;
-  opacity: 1 !important;
   animation: none !important;
   transition: none !important;
-  padding: 20px 0 !important;
 }
 
-/* ======================== */
-/* 页脚社交媒体图标 */
-/* ======================== */
 #footer .social-icons {
-  margin: 20px 0 !important;
   display: flex;
   justify-content: center;
   gap: 25px !important;
@@ -80,9 +100,6 @@ button:hover,
   font-size: 1.3em !important;
 }
 
-/* ======================== */
-/* 页脚文字系统 */
-/* ======================== */
 #footer,
 #footer * {
   text-decoration: none !important;
@@ -93,12 +110,7 @@ button:hover,
   opacity: 1 !important;
   color: var(--text-color) !important;
   font-size: 0.92rem;
-  line-height: 1.6;
   text-shadow: 0 1px 1px rgba(0,0,0,0.05);
-}
-
-#footer .framework-info {
-  margin-top: 10px !important;
 }
 
 #footer .framework-info a {
@@ -116,16 +128,6 @@ button:hover,
   margin: 0 10px !important;
 }
 
-/* ======================== */
-/* 深色模式适配 */
-/* ======================== */
-[data-theme="dark"] #footer {
-  background: var(--footer-bg-dark-color, #2d2d2d) !important;
-  --text-color: #d1d1d1 !important;
-  --link-color: #e0e0e0 !important;
-  --icon-color: #bbbbbb !important;
-}
-
 [data-theme="dark"] #footer .social-icons a {
   background: rgba(255,255,255,0.1) !important;
 }
@@ -134,6 +136,13 @@ button:hover,
   background: rgba(255,255,255,0.2) !important;
 }
 
-[data-theme="dark"] #footer .footer-separator {
-  color: rgba(255,255,255,0.3) !important;
+.banner-main {
+  display: block !important;
+  background-image: url(/images/banner.jpg) !important;
+}
+
+/* ====== 头像悬停旋转动画 ====== */
+#avatar-wrapper:hover img {
+  transform: rotate(180deg) scale(1.1) !important;  /* 旋转+放大 */
+  transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1) !important;
 }
