@@ -138,11 +138,63 @@
 
 .banner-main {
   display: block !important;
+  height: 640px !important; /* 和 _config.butterfly.yml 保持一致 */
   background-image: url(/images/banner.jpg) !important;
+  background-size: cover !important;
+  background-position: center !important;
 }
 
 /* ====== 头像悬停旋转动画 ====== */
 #avatar-wrapper:hover img {
   transform: rotate(180deg) scale(1.1) !important;  /* 旋转+放大 */
   transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1) !important;
+}
+
+/* 首页文章封面图优化 */
+#recent-posts .post-card .post-cover {
+  max-height: 200px;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+#recent-posts .post-card .post-cover img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+#recent-posts .post-card .post-cover img:hover {
+  transform: scale(1.05);
+}
+
+/* ========= 自定义 Banner 样式：用于首页和文章顶部 ========= */
+#page-header, .post-top-img {
+  height: 640px !important;              /* 匹配你的图片高度 */
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* 移动端自适应高度 */
+@media (max-width: 768px) {
+  #page-header, .post-top-img {
+    height: 260px !important;   /* 或根据实际图像内容微调 */
+  }
+}
+
+#page-header.full_page {
+  height: 640px !important;
+  background-size: cover !important;
+  background-position: center center !important;
+}
+
+/* 强制覆盖文章页 banner 高度 */
+.post .page-header,
+.page .page-header,
+.category .page-header,
+.tag .page-header {
+  height: 640px !important;
+  background-size: cover !important;
+  background-position: center center !important;
 }
