@@ -183,16 +183,6 @@
   background-position: center center !important;
 }
 
-/* 文章、页面、分类、标签页banner 默认高度 */
-.post .page-header,
-.page .page-header,
-.category .page-header,
-.tag .page-header {
-  height: 640px !important;
-  background-size: cover !important;
-  background-position: center center !important;
-}
-
 /* 移动端优化banner */
 @media (max-width: 768px) {
   #page-header.full_page {
