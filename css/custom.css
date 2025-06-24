@@ -176,10 +176,29 @@
   background-repeat: no-repeat !important;
 }
 
-/* 移动端自适应高度 */
 @media (max-width: 768px) {
-  #page-header, .post-top-img {
-    height: 260px !important;   /* 或根据实际图像内容微调 */
+  /* 首页 banner 高度统一调整 */
+  #page-header.full_page {
+    height: 260px !important;
+  }
+
+  /* 可选：文字上下边距微调 */
+  #site-info {
+    padding: 40px 0 20px;
+  }
+
+  #site-title {
+    font-size: 1.4rem !important;
+  }
+
+  #site-subtitle {
+    font-size: 1rem !important;
+  }
+
+  /* 首页下滑按钮缩小 */
+  #scroll-down {
+    bottom: 10px !important;
+    font-size: 1.5rem !important;
   }
 }
 
@@ -197,4 +216,13 @@
   height: 640px !important;
   background-size: cover !important;
   background-position: center center !important;
+}
+
+img.lazyload {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+img.lazyloaded {
+  opacity: 1;
 }
