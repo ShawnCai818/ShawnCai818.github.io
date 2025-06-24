@@ -204,8 +204,14 @@
     text-align: center !important;
   }
 
-  .post .page-title {
-    font-size: 1.2rem !important;
+  /* 文章页 banner 标题，字体更小更紧凑 */
+  .post .page-title,
+  .post .page-header .page-title,
+  .post .page-header h1.page-title {
+    font-size: 1rem !important;        /* 调整为更小字体 */
+    line-height: 1.3 !important;
+    padding: 0.6rem 0 !important;
+    text-align: center !important;
   }
 }
 
