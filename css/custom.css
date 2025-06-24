@@ -183,28 +183,19 @@
 /* 移动端 Banner 样式优化 */
 /* ======================== */
 @media (max-width: 768px) {
-  /* 所有页面统一 Banner 逻辑 */
+  /* 所有页面 Banner 样式，统一为 16:9 */
   #page-header,
+  #page-header.full_page,
   .post-top-img,
-  .page .page-header,
   .post .page-header,
+  .page .page-header,
   .category .page-header,
   .tag .page-header {
-    height: auto !important;
-    max-height: none !important;
-    min-height: unset !important;
-    aspect-ratio: 3 / 2 !important; /* 控制图片完整显示 */
+    aspect-ratio: 16 / 9 !important;  /* ✅ 关键修改 */
+    height: auto !important;         /* 根据宽度自动撑高 */
     background-size: cover !important;
+    background-position: center center !important;
     background-repeat: no-repeat !important;
-    background-position: top center !important;
-  }
-
-  /* 首页额外控制（避免额外留白） */
-  #page-header.full_page {
-    aspect-ratio: 3 / 2 !important;
-    height: auto !important;
-    background-size: cover !important;
-    background-position: top center !important;
   }
 
   /* 可选：顶部信息区域内边距控制 */
