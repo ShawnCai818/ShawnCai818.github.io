@@ -193,30 +193,31 @@
   background-position: center center !important;
 }
 
-/* 移动端适配：统一缩小所有banner高度，包括首页 */
+/* 移动端优化banner */
 @media (max-width: 768px) {
   #page-header.full_page,
   .post .page-header,
   .page .page-header,
   .category .page-header,
   .tag .page-header {
-    height: 260px !important;
+    height: 40vh !important;       /* 屏幕高度40% */
+    min-height: 200px !important;  /* 最低200px */
+    max-height: 300px !important;  /* 最大300px */
+    background-size: contain !important;  /* 完整显示图片 */
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
   }
 
-  /* 可选：文字上下边距微调 */
+  /* 文字等内容适配 */
   #site-info {
-    padding: 40px 0 20px;
+    padding: 20px 0 10px !important;
   }
-
   #site-title {
     font-size: 1.4rem !important;
   }
-
   #site-subtitle {
     font-size: 1rem !important;
   }
-
-  /* 首页下滑按钮缩小 */
   #scroll-down {
     bottom: 10px !important;
     font-size: 1.5rem !important;
