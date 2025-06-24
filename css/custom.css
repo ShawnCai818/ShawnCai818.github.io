@@ -32,36 +32,31 @@
 }
 
 /* ======================== */
-/* 修改重点：页脚高度调整 */
+/* 页脚高度压缩优化 */
 /* ======================== */
 #footer-wrap {
-  padding: 10px 0 !important;  /* 大幅减少上下内边距 */
-  margin: 0 !important;        /* 移除所有外边距 */
-  min-height: unset !important; /* 移除最小高度限制 */
+  padding: 10px 0 !important;
+  margin: 0 !important;
+  min-height: unset !important;
 }
 
-/* 社交图标区域压缩 */
 #footer-wrap .social-icons {
-  margin: 8px 0 !important;    /* 减少上下边距 */
-  padding: 0 !important;       /* 移除内边距 */
+  margin: 8px 0 !important;
+  padding: 0 !important;
 }
 
-/* 版权信息行压缩 */
 #footer-wrap .copyright,
 #footer-wrap .framework-info {
-  margin: 2px 0 !important;    /* 极简边距 */
-  line-height: 1.2 !important; /* 紧凑行高 */
-  font-size: 0.8rem !important; /* 可选：调小字号 */
+  margin: 2px 0 !important;
+  line-height: 1.2 !important;
+  font-size: 0.8rem !important;
 }
 
-/* 确保没有隐藏元素占用空间 */
 #footer-wrap:after {
   content: none !important;
 }
 
-/* ======================== */
-/* 以下所有原有样式保持不变 */
-/* ======================== */
+/* 页脚颜色和样式 */
 #footer {
   background: var(--footer-bg-color, #f5f5f5) !important;
   background-image: none !important;
@@ -136,17 +131,18 @@
   background: rgba(255,255,255,0.2) !important;
 }
 
+/* 首页顶部自定义 Banner */
 .banner-main {
   display: block !important;
-  height: 640px !important; /* 和 _config.butterfly.yml 保持一致 */
+  height: 640px !important;
   background-image: url(/images/banner.jpg) !important;
   background-size: cover !important;
   background-position: center !important;
 }
 
-/* ====== 头像悬停旋转动画 ====== */
+/* 头像旋转动画 */
 #avatar-wrapper:hover img {
-  transform: rotate(180deg) scale(1.1) !important;  /* 旋转+放大 */
+  transform: rotate(180deg) scale(1.1) !important;
   transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1) !important;
 }
 
@@ -168,61 +164,77 @@
   transform: scale(1.05);
 }
 
-/* ========= 自定义 Banner 样式：用于首页和文章顶部 ========= */
-#page-header, .post-top-img {
-  height: 640px !important;              /* 匹配你的图片高度 */
+/* ======================== */
+/* Banner 全局样式（桌面端） */
+/* ======================== */
+#page-header,
+.post-top-img,
+.page .page-header,
+.post .page-header,
+.category .page-header,
+.tag .page-header {
+  height: 640px !important;
   background-size: cover !important;
   background-position: center center !important;
   background-repeat: no-repeat !important;
 }
 
-/* 首页banner 默认高度 */
-#page-header.full_page {
-  height: 640px !important;
-  background-size: cover !important;
-  background-position: center center !important;
-}
-
-/* 移动端优化banner */
+/* ======================== */
+/* 移动端 Banner 样式优化 */
+/* ======================== */
 @media (max-width: 768px) {
+  /* 首页 Banner */
   #page-header.full_page {
-    height: 40vh !important;       /* 屏幕高度40% */
-    min-height: 200px !important;  /* 最低200px */
-    max-height: 300px !important;  /* 最大300px */
-    background-size: contain !important;  /* 完整显示图片 */
+    height: 40vh !important;
+    min-height: 200px !important;
+    max-height: 300px !important;
+    background-size: contain !important;
     background-repeat: no-repeat !important;
     background-position: center center !important;
   }
 
-  /* 文章、页面、分类、标签页banner移动端 */
+  /* 非首页 Banner（About、文章、分类、标签等） */
+  body:not(.home) #page-header,
+  .post-top-img,
   .post .page-header,
   .page .page-header,
   .category .page-header,
   .tag .page-header {
-    height: 40vh !important;       /* 屏幕高度40% */
-    min-height: 200px !important;  /* 最低200px */
-    max-height: 300px !important;  /* 最大300px */
-    background-size: contain !important;  /* 完整显示图片 */
+    height: 40vh !important;
+    min-height: 200px !important;
+    max-height: 300px !important;
+    background-size: contain !important;
     background-repeat: no-repeat !important;
     background-position: center center !important;
   }
 
-  /* 文字等内容适配 */
+  /* 文字内容排版优化 */
   #site-info {
     padding: 20px 0 10px !important;
   }
+
   #site-title {
     font-size: 1.4rem !important;
   }
+
   #site-subtitle {
     font-size: 1rem !important;
   }
+
   #scroll-down {
     bottom: 10px !important;
     font-size: 1.5rem !important;
   }
+
+  .page-title, 
+  #site-title, 
+  #page-site-info h1 {
+    font-size: 1.3rem !important;
+    padding-top: 1rem !important;
+  }
 }
 
+/* 图片懒加载淡入 */
 img.lazyload {
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
