@@ -165,7 +165,7 @@
 }
 
 /* ======================== */
-/* Banner 全局样式（桌面端） */
+/* Banner 样式优化：桌面端通用 */
 /* ======================== */
 #page-header,
 .post-top-img,
@@ -183,32 +183,31 @@
 /* 移动端 Banner 样式优化 */
 /* ======================== */
 @media (max-width: 768px) {
-  /* 首页 Banner */
-  #page-header.full_page {
-    height: 40vh !important;
-    min-height: 200px !important;
-    max-height: 300px !important;
-    background-size: contain !important;
-    background-repeat: no-repeat !important;
-    background-position: center center !important;
-  }
-
-  /* 非首页 Banner（About、文章、分类、标签等） */
-  body:not(.home) #page-header,
+  /* 所有页面统一 Banner 逻辑 */
+  #page-header,
   .post-top-img,
-  .post .page-header,
   .page .page-header,
+  .post .page-header,
   .category .page-header,
   .tag .page-header {
-    height: 40vh !important;
-    min-height: 200px !important;
-    max-height: 300px !important;
+    height: auto !important;
+    max-height: none !important;
+    min-height: unset !important;
+    aspect-ratio: 3 / 2 !important; /* 控制图片完整显示 */
     background-size: contain !important;
     background-repeat: no-repeat !important;
-    background-position: center center !important;
+    background-position: top center !important;
   }
 
-  /* 文字内容排版优化 */
+  /* 首页额外控制（避免额外留白） */
+  #page-header.full_page {
+    aspect-ratio: 3 / 2 !important;
+    height: auto !important;
+    background-size: contain !important;
+    background-position: top center !important;
+  }
+
+  /* 可选：顶部信息区域内边距控制 */
   #site-info {
     padding: 20px 0 10px !important;
   }
@@ -227,7 +226,6 @@
   }
 
   .page-title, 
-  #site-title, 
   #page-site-info h1 {
     font-size: 1.3rem !important;
     padding-top: 1rem !important;
