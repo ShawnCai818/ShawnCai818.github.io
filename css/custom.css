@@ -176,9 +176,30 @@
   background-repeat: no-repeat !important;
 }
 
+/* 首页banner 默认高度 */
+#page-header.full_page {
+  height: 640px !important;
+  background-size: cover !important;
+  background-position: center center !important;
+}
+
+/* 文章、页面、分类、标签页banner 默认高度 */
+.post .page-header,
+.page .page-header,
+.category .page-header,
+.tag .page-header {
+  height: 640px !important;
+  background-size: cover !important;
+  background-position: center center !important;
+}
+
+/* 移动端适配：统一缩小所有banner高度，包括首页 */
 @media (max-width: 768px) {
-  /* 首页 banner 高度统一调整 */
-  #page-header.full_page {
+  #page-header.full_page,
+  .post .page-header,
+  .page .page-header,
+  .category .page-header,
+  .tag .page-header {
     height: 260px !important;
   }
 
@@ -200,12 +221,6 @@
     bottom: 10px !important;
     font-size: 1.5rem !important;
   }
-}
-
-#page-header.full_page {
-  height: 640px !important;
-  background-size: cover !important;
-  background-position: center center !important;
 }
 
 /* 强制覆盖文章页 banner 高度 */
