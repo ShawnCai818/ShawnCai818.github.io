@@ -1,7 +1,6 @@
 /* ======================== */
 /* 全局按钮样式终极覆盖（保持不变） */
 /* ======================== */
-/* ====== 灰色系按钮 ====== */
 .btn, 
 [class*="button"], 
 .pagination .page-number, 
@@ -12,7 +11,6 @@
   transition: all 0.3s ease !important;
 }
 
-/* 悬停效果 */
 .btn:hover,
 [class*="button"]:hover {
   background: var(--btn-hover-color, #495057) !important;
@@ -20,20 +18,18 @@
   box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important;
 }
 
-/* ====== 灰色系卡片 ====== */
+/* ======================== */
+/* 卡片、导航、页脚压缩优化（保持不变） */
+/* ======================== */
 .card {
   background: #f8f9fa !important;
   border: 1px solid #dee2e6 !important;
 }
 
-/* ====== 导航栏 ====== */
 .navbar {
-  background: #343a40 !important; /* 深灰导航 */
+  background: #343a40 !important;
 }
 
-/* ======================== */
-/* 页脚高度压缩优化 */
-/* ======================== */
 #footer-wrap {
   padding: 10px 0 !important;
   margin: 0 !important;
@@ -56,7 +52,6 @@
   content: none !important;
 }
 
-/* 页脚颜色和样式 */
 #footer {
   background: var(--footer-bg-color, #f5f5f5) !important;
   background-image: none !important;
@@ -81,7 +76,7 @@
   height: 42px !important;
   border-radius: 50% !important;
   background: rgba(0,0,0,0.08) !important;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transition: all 0.3s ease !important;
   transform: scale(1);
 }
 
@@ -131,19 +126,32 @@
   background: rgba(255,255,255,0.2) !important;
 }
 
-/* 首页顶部自定义 Banner */
-.banner-main {
-  display: block !important;
-  height: 640px !important;
-  background-image: url(/images/banner.jpg) !important;
+/* ======================== */
+/* 自定义 Banner 样式：首页 + 全站统一展示为 16:9 */
+/* ======================== */
+#page-header,
+#page-header.full_page,
+.post-top-img,
+.post .page-header,
+.page .page-header,
+.category .page-header,
+.tag .page-header {
+  width: 100% !important;
+  aspect-ratio: 16 / 9 !important;
+  height: auto !important;
   background-size: cover !important;
-  background-position: center !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
 }
 
-/* 头像旋转动画 */
-#avatar-wrapper:hover img {
-  transform: rotate(180deg) scale(1.1) !important;
-  transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1) !important;
+/* 首页 banner 兼容 .banner-main */
+.banner-main {
+  display: block !important;
+  aspect-ratio: 16 / 9 !important;
+  background-image: url(/images/banner.jpg) !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
 }
 
 /* 首页文章封面图优化 */
@@ -164,41 +172,14 @@
   transform: scale(1.05);
 }
 
-/* ======================== */
-/* Banner 样式优化：桌面端通用 */
-/* ======================== */
-#page-header,
-.post-top-img,
-.page .page-header,
-.post .page-header,
-.category .page-header,
-.tag .page-header {
-  height: 640px !important;
-  background-size: cover !important;
-  background-position: center center !important;
-  background-repeat: no-repeat !important;
+/* 头像旋转动画 */
+#avatar-wrapper:hover img {
+  transform: rotate(180deg) scale(1.1) !important;
+  transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1) !important;
 }
 
-/* ======================== */
-/* 移动端 Banner 样式优化 */
-/* ======================== */
+/* 移动端文字与按钮适配 */
 @media (max-width: 768px) {
-  /* 所有页面 Banner 样式，统一为 16:9 */
-  #page-header,
-  #page-header.full_page,
-  .post-top-img,
-  .post .page-header,
-  .page .page-header,
-  .category .page-header,
-  .tag .page-header {
-    aspect-ratio: 16 / 9 !important;  /* ✅ 关键修改 */
-    height: auto !important;         /* 根据宽度自动撑高 */
-    background-size: cover !important;
-    background-position: center center !important;
-    background-repeat: no-repeat !important;
-  }
-
-  /* 可选：顶部信息区域内边距控制 */
   #site-info {
     padding: 20px 0 10px !important;
   }
@@ -216,14 +197,14 @@
     font-size: 1.5rem !important;
   }
 
-  .page-title, 
+  .page-title,
   #page-site-info h1 {
     font-size: 1.3rem !important;
     padding-top: 1rem !important;
   }
 }
 
-/* 图片懒加载淡入 */
+/* 图片懒加载动画 */
 img.lazyload {
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
