@@ -195,7 +195,16 @@
 
 /* 移动端优化banner */
 @media (max-width: 768px) {
-  #page-header.full_page,
+  #page-header.full_page {
+    height: 40vh !important;       /* 屏幕高度40% */
+    min-height: 200px !important;  /* 最低200px */
+    max-height: 300px !important;  /* 最大300px */
+    background-size: contain !important;  /* 完整显示图片 */
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+  }
+
+  /* 文章、页面、分类、标签页banner移动端 */
   .post .page-header,
   .page .page-header,
   .category .page-header,
@@ -222,16 +231,6 @@
     bottom: 10px !important;
     font-size: 1.5rem !important;
   }
-}
-
-/* 强制覆盖文章页 banner 高度 */
-.post .page-header,
-.page .page-header,
-.category .page-header,
-.tag .page-header {
-  height: 640px !important;
-  background-size: cover !important;
-  background-position: center center !important;
 }
 
 img.lazyload {
