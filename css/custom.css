@@ -126,23 +126,29 @@
   background: rgba(255,255,255,0.2) !important;
 }
 
-/* ======================== */
-/* 自定义 Banner 样式：首页 + 全站统一展示为 16:9 */
-/* ======================== */
+/* ===== 默认 Banner：首页/分类/标签/页面使用 3:1（PC端） ===== */
 #page-header,
 #page-header.full_page,
-.post-top-img,
-.post .page-header,
-.page .page-header,
 .category .page-header,
-.tag .page-header {
+.tag .page-header,
+.page .page-header {
   width: 100% !important;
+  aspect-ratio: 3 / 1 !important;
+  height: auto !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* 仅限文章页使用 16:9 */
+#page-header.post-bg {
   aspect-ratio: 16 / 9 !important;
   height: auto !important;
   background-size: cover !important;
   background-position: center center !important;
   background-repeat: no-repeat !important;
 }
+
 
 /* 首页 banner 兼容 .banner-main */
 .banner-main {
