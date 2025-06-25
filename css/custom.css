@@ -229,3 +229,23 @@ img.lazyload {
 img.lazyloaded {
   opacity: 1;
 }
+
+.emoji-party {
+  display: inline-block;
+  animation: partyBounce 1.8s infinite ease-in-out;
+}
+
+@keyframes partyBounce {
+  0%, 100% {
+    transform: scale(1) rotate(0deg) translateY(0);
+  }
+  25% {
+    transform: scale(1.2) rotate(10deg) translateY(-3px);
+  }
+  50% {
+    transform: scale(1.1) rotate(-10deg) translateY(-6px);
+  }
+  75% {
+    transform: scale(1.2) rotate(10deg) translateY(-3px);
+  }
+}
